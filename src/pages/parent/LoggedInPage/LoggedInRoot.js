@@ -27,10 +27,12 @@ const LoggedInRoot = () => {
   const dispatch = useDispatch();
 
   // TODO --------------- USEEFFECT ---------------
+
   // ? ALL API REQUEST START HERE FOR USER LOGGED IN
   // ! ADD API FOR GRADE RECORDS AND PASS IT AS A PROPS
 
   // * ------------ SUBJECSTS REQUEST --------------
+
   // * subjects request api
   useEffect(() => {
     dispatch(getSubjects({ studentId: userInfo.studentId }));

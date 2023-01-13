@@ -11,8 +11,8 @@ const SignUpRoot = () => {
   return (
     <>
       <Routes>
-        <Route index element={<Login />} />
-        <Route path="/Signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<>Page not found!</>} />
       </Routes>
     </>

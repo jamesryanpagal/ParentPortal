@@ -15,8 +15,6 @@ import LoginLogo from "../../../../assets/Images/Login/LoginLogo.png";
 import { Menu, Layout } from "antd";
 const { Sider } = Layout;
 
-console.log(getHighLightPageLink());
-
 const SideBar = ({ foldSider, setCurrentPage, currentPage }) => {
   return (
     <Sider

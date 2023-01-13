@@ -6,8 +6,16 @@ import Content from "./Content/Content";
 
 // ? plugins
 import { Layout } from "antd";
+import { useSelector } from "react-redux";
+import { useOutletContext } from "react-router-dom";
 
-const Dashboard = ({ subjects, subjectsLoading, subjectLinks }) => {
+const Dashboard = () => {
+  // TODO ------------- STATE ---------------
+  const { subjects, subjectsLoading } = useSelector(
+    (state) => state.dashboardSlice
+  );
+  const outletContext = useOutletContext();
+
   return (
     <div className="h-[92vh] p-5 flex justify-between items-center space-x-5">
       {/* sider */}
@@ -15,7 +23,7 @@ const Dashboard = ({ subjects, subjectsLoading, subjectLinks }) => {
         <DashboardSider
           subjects={subjects}
           subjectsLoading={subjectsLoading}
-          subjectLinks={subjectLinks}
+          subjectLinks={outletContext.subjectLinks}
         />
       </Layout>
       {/* content */}

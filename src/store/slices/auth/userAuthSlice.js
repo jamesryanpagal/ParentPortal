@@ -13,55 +13,64 @@ export const userAuthSlice = createSlice({
   reducers: {
     // ? login actions
     login(state) {
-      return { ...state, loginLoading: true };
+      state = { ...state, loginLoading: true };
+      return state;
     },
     loginSuccess(state, { payload }) {
-      return {
+      state = {
         ...state,
         loginLoading: false,
         userInfo: payload.data.data,
         token: payload.data.token,
       };
+      return state;
     },
     loginError(state, { payload }) {
       message.error(payload.message);
-      return { ...state, loginLoading: false, userInfo: {}, token: null };
+      state = { ...state, loginLoading: false, userInfo: {}, token: null };
+      return state;
     },
 
     // ? signup actions
     signUp(state) {
-      return { ...state, signUpLoading: true };
+      state = { ...state, signUpLoading: true };
+      return state;
     },
     signUpSuccess(state, { payload }) {
-      return {
+      state = {
         ...state,
         signUpLoading: false,
         userInfo: payload.data.data,
         token: payload.data.token,
       };
+      return state;
     },
     signUpError(state, { payload }) {
       message.error(payload.message);
-      return { ...state, signUpLoading: false, userInfo: {}, token: null };
+      state = { ...state, signUpLoading: false, userInfo: {}, token: null };
+      return state;
     },
 
     // ? update users details
     updateUsersDetails(state) {
-      return { ...state, updateUserDetailsLoading: true };
+      state = { ...state, updateUserDetailsLoading: true };
+      return state;
     },
 
     updateUserDetailsSuccess(state, { payload }) {
       message.success(payload.message);
-      return {
+      state = {
         ...state,
         updateUserDetailsLoading: false,
         userInfo: payload.getProfile.data,
       };
+      return state;
     },
 
     updateUserDetailsError(state, { payload }) {
       message.error(payload.message);
-      return { ...state, updateUserDetailsLoading: false };
+      state = { ...state, updateUserDetailsLoading: false };
+      return state;
     },
   },
 });

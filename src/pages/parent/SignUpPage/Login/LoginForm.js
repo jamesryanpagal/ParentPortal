@@ -25,6 +25,7 @@ const LoginForm = () => {
       <Form.Item
         name="username"
         className="mb-7"
+        initialValue={"sabelits"}
         rules={[{ required: true, message: "Username is required" }]}>
         <Input
           className="bg-inputField"
@@ -38,6 +39,7 @@ const LoginForm = () => {
       <Form.Item
         name="password"
         className="mt-5 mb-0"
+        initialValue={"password"}
         rules={[{ required: true, message: "Password is required" }]}>
         <Input.Password
           className="bg-inputField relative"

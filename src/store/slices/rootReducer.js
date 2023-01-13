@@ -17,7 +17,7 @@ const authPersistConfig = {
   key: "userAuth",
   version: 1,
   storage,
-  whiteList: ["userInfo"],
+  whiteList: ["userAuthSlice"],
 };
 
 const rootReducer = combineReducers({
